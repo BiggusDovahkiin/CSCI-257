@@ -7,9 +7,26 @@ public class Game {
 	}
 
 	public static ArrayList<Item> inventory = new ArrayList<Item>();
+	public static Room currentRoom = World.buildWorld();
+	
+	
+	public static void print(Object obj) {
+		System.out.println(obj.toString());
+		}
+	
+	public Item useItem(String nameOfItem) {
+		for (Item itemName : inventory) {
+			if (itemName.getName().equals(nameOfItem)) {
+				return itemName;
+			}
+			else {
+				return null;
+			}
+		}
+		return null;
+	}
 
 	public static void runGame() {
-		Room currentRoom = World.buildWorld();
 		Scanner input = new Scanner(System.in);
 
 		String command; // player's command
@@ -31,11 +48,11 @@ public class Game {
 
 			// Take Command
 			case "take":
-				Item item = currentRoom.getItem(parts[1]);
-				if (item != null) {
-					inventory.add(item);
+				Item thing1 = currentRoom.getItem(parts[1]);
+				if (thing1 != null) {
+					inventory.add(thing1);
 					currentRoom.removeItem(parts[1]);
-					System.out.println("You Got a " + item.getName() + "!");
+					System.out.println("You Got a " + thing1.getName() + "!");
 				} else {
 					System.out.println("There is Nothing to Take Here.");
 				}
@@ -43,19 +60,35 @@ public class Game {
 
 			// Look Command
 			case "look":
-				Item thing = currentRoom.getItem(parts[1]);
-				if (thing != null) {
-					System.out.println(thing.getDescription());
+				Item thing2 = currentRoom.getItem(parts[1]);
+				if (thing2 != null) {
+					System.out.println(thing2.getDescription());
 				} else {
 					for (Item itemName : inventory) {
 						if (itemName.getName().equals(parts[1])) {
 							System.out.println(itemName.getDescription());
 						} else {
-							System.out.println("There is Such Item");
+							System.out.println("There is No Such Item");
 						}
 					}
 				}
 				break;
+				
+			// Use Command
+			case "use":
+				for (Item itemName : inventory) {
+					if (itemName.getName().equals(parts[1])) {
+						itemName.use();
+					} 
+				}
+				break;
+				
+			// Open Command
+			case "open":
+				Item thing3 = currentRoom.getItem(parts[1]);
+				if (thing3 != null) {
+					thing3.open();
+				}
 
 			// Inventory Command
 			case "i":

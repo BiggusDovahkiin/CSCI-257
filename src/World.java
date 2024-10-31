@@ -65,6 +65,9 @@ public class World {
 		
 		knight.addItem(armor.getName(), armor);
 		// Dungeon Items
+		Combination vaultKey = new Combination("VaultKey", "A Key to The Royal Vault!");
+		
+		dungeon.addItem(vaultKey.getName(), vaultKey);
 		// Dragon Lair Items
 		// Agartha Items
 		// Market Items
@@ -73,6 +76,9 @@ public class World {
 		// Wizard Sanctum Items
 		// Throne Room Items
 		// Vault Items
+		Safe royalVault = new Safe("RoyalVault", "The Vault That Contains all the Powerful and Valuable Findings of the Royal Family");
+		
+		vault.addItem(royalVault.getName(), royalVault);
 		
 		return gate; // returns to starting gate
 	}

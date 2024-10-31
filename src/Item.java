@@ -20,4 +20,12 @@ public class Item {
 	public String toString() {
 		return name;
 	}
+	
+	public void open() {
+		Game.print("You Can't Open That.");
+	}
+	
+	public void use() {
+		Game.print("You Can't Use That.");
+	}
 }
