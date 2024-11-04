@@ -3,6 +3,7 @@ import java.util.HashMap;
 public class Room {
 
 	private HashMap<String, Item> items = new HashMap<String, Item>();
+	private String name;
 	private String description;
 	private Room n;
 	private Room e;
@@ -10,9 +11,11 @@ public class Room {
 	private Room w;
 	private Room u;
 	private Room d;
+	private boolean lock;
 
 	// constructor
-	public Room(String desc) {
+	public Room(String n, String desc) {
+		name = n;
 		description = desc;
 	}
 
@@ -77,6 +80,14 @@ public class Room {
 	
 	public void removeItem(String itemName) {
 		items.remove(itemName);
+	}
+	
+	public boolean isLock() {
+		return lock;
+	}
+
+	public void setLock(boolean lock) {
+		this.lock = true;
 	}
 
 	// special methods
