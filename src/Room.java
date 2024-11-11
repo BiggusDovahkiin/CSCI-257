@@ -66,6 +66,10 @@ public class Room {
 		}
 	}
 	
+	public String getName() {
+		return name;
+	}
+	
 	public Item getItem(String itemName) {
 		return items.get(itemName);
 	}
@@ -87,11 +91,12 @@ public class Room {
 	}
 
 	public void setLock(boolean lock) {
-		this.lock = true;
+		this.lock = false;
 	}
 
 	// special methods
 	public String toString() {
 		return description;
 	}
+	
 }

@@ -1,19 +1,19 @@
 
-public class Safe extends Item{
+public class VaultDoor extends Item{
 	
-	public Safe(String name, String desc) {
+	public VaultDoor(String name, String desc) {
 		super(name,desc);
 	}
 	
 	@Override
 	public void open() {
-		boolean openSafe = false;
+		boolean openDoor = false;
 		for (Item itemName : Game.inventory) {
 			if (itemName.getName().equals("VaultKey")) {
-				openSafe = true;
+				openDoor = true;
 			}
 		}
-		if (openSafe) {
+		if (openDoor) {
 			Item Diamond = new Item("Diamond", "A Super Shiny Diamond!");
 			Game.inventory.add(Diamond);
 			Game.print("Using the Vault Key, You Open the Vault Door to Find a Very Shiny Diamond");

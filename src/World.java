@@ -65,7 +65,7 @@ public class World {
 		
 		knight.addItem(armor.getName(), armor);
 		// Dungeon Items
-		Combination vaultKey = new Combination("VaultKey", "A Key to The Royal Vault!");
+		Key vaultKey = new Key("VaultKey", "A Key to The Royal Vault!");
 		
 		dungeon.addItem(vaultKey.getName(), vaultKey);
 		// Dragon Lair Items
@@ -75,10 +75,10 @@ public class World {
 		// Archery Range Items
 		// Wizard Sanctum Items
 		// Throne Room Items
+		VaultDoor royalVault = new VaultDoor("RoyalVaultDoor", "A Massive Vault Door With a Tungsten Carbide Hull, Titanium Alloy Hydroylics, Maraging Steel Interior, Graphene-Reinforced Composite Frame, and Ceramic-Metal Armored Plates." + "\n" + "...Unless You Have a Vault Key of Somesort, You Aint Ever Get in!");
+
+		throne.addItem(royalVault.getName(), royalVault);
 		// Vault Items
-		Safe royalVault = new Safe("RoyalVaultDoor", "A Massive Vault Door With a Tungsten Carbide Hull, Titanium Alloy Hydroylics, Maraging Steel Interior, Graphene-Reinforced Composite Frame, and Ceramic-Metal Armored Plates." + "\n" + "...Unless You Have a Vault Key of Somesort, You Will Never Get in!");
-		
-		vault.addItem(royalVault.getName(), royalVault);
 		
 		return gate; // returns to starting gate
 	}

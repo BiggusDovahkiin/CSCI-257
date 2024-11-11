@@ -1,7 +1,7 @@
 
-public class Combination extends Item{
+public class Key extends Item{
 	
-	public Combination(String name, String desc) {
+	public Key(String name, String desc) {
 		super(name,desc);
 	}
 	
