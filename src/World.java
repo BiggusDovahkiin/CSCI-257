@@ -47,6 +47,7 @@ public class World {
 		dungeon.addExit('u', knight);
 		
 		vault.addExit('u', throne);
+		vault.setLock(true);
 		
 		// Gate Items
 		Item tiara = new Item("Tiara", "The Tiara of Princess Maria, I Must Return it!");
@@ -75,9 +76,9 @@ public class World {
 		// Archery Range Items
 		// Wizard Sanctum Items
 		// Throne Room Items
-		VaultDoor royalVault = new VaultDoor("RoyalVaultDoor", "A Massive Vault Door With a Tungsten Carbide Hull, Titanium Alloy Hydroylics, Maraging Steel Interior, Graphene-Reinforced Composite Frame, and Ceramic-Metal Armored Plates." + "\n" + "...Unless You Have a Vault Key of Somesort, You Aint Ever Get in!");
+		VaultDoor vaultDoor = new VaultDoor("RoyalVaultDoor", "A Massive Vault Door With a Tungsten Carbide Hull, Titanium Alloy Hydroylics, Maraging Steel Interior, Graphene-Reinforced Composite Frame, and Ceramic-Metal Armored Plates." + "\n" + "...Unless You Have a Vault Key of Somesort, You Aint Ever Get in!");
 
-		throne.addItem(royalVault.getName(), royalVault);
+		throne.addItem(vaultDoor.getName(), vaultDoor);
 		// Vault Items
 		
 		return gate; // returns to starting gate

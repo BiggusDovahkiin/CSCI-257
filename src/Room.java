@@ -91,7 +91,7 @@ public class Room {
 	}
 
 	public void setLock(boolean lock) {
-		this.lock = false;
+		this.lock = lock;
 	}
 
 	// special methods

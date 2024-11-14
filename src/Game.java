@@ -43,7 +43,14 @@ public class Game {
 			case "s":
 			case "u":
 			case "d":
-				currentRoom = currentRoom.getExit(command.charAt(0));
+				Room nextRoom = currentRoom.getExit(command.charAt(0));
+				if (nextRoom == null) {
+					System.out.println("You Cannot Go That Way.");
+				} else if (nextRoom.isLock()) {
+					System.out.println("This door is locked. Find a Way to Unlock it!");
+				} else {
+					currentRoom = nextRoom;
+				}
 				break;
 
 			// Take Command

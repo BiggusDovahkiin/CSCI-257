@@ -7,19 +7,23 @@ public class VaultDoor extends Item{
 	
 	@Override
 	public void open() {
-		boolean openDoor = false;
+		boolean hasKey = false;
 		for (Item itemName : Game.inventory) {
 			if (itemName.getName().equals("VaultKey")) {
-				openDoor = true;
+				hasKey = true;
 			}
 		}
-		if (openDoor) {
-			Item Diamond = new Item("Diamond", "A Super Shiny Diamond!");
-			Game.inventory.add(Diamond);
-			Game.print("Using the Vault Key, You Open the Vault Door to Find a Very Shiny Diamond");
+		
+		if (hasKey) {
+			Room vaultRoom = Game.currentRoom.getExit('d');
+			if (vaultRoom != null && vaultRoom.isLock()) {
+				vaultRoom.setLock(false);  // Unlock the room
+				Game.print("You use the Vault Key to open the Vault Door. The Vault is Now Unlocked!");
+			} else {
+				Game.print("The Vault is already unlocked.");
+			}
+		} else {
+			Game.print("You don't have the key to open this door.");
 		}
-		else {
-			Game.print("You Found the Vault but it Appears you Have No Means to Open this Vault. It Looks Like you Need a Vault Key!"); }
 	}
-
 }
