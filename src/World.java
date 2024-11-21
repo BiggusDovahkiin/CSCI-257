@@ -2,7 +2,7 @@
 public class World {
 	public static Room buildWorld() {
 		Room dragon = new Room("DragonsLair", "This is the Lair of the Great Dragon, GoodLuck!");
-		Room gate = new Room("MainGate", "The Main gate of The Castle. A Dull Sword and Burned Armor Lay at Your Feet! You also Find a Tiara.");
+		Room gate = new Room("MainGate", "The Main gate of The Castle. A Dull Sword and Burned Armor Lay at Your Feet! You also Find a Tiara. The Guard Guarding the Gate is at Attention and hasn't moved since the Ice Age");
 		Room tavern = new Room("Tavern", "This is the Castle Tavern, Information and Drinks Await!");
 		Room market = new Room("Market", "This is the Castle Market where you can Buy and Sell Goods!");
 		Room blacksmith = new Room("BlackSmith", "This is the Castle Blacksmith, where Powerful Weapons are Made... Maybe even the Dragon Slaying kind?");
@@ -49,11 +49,13 @@ public class World {
 		vault.addExit('u', throne);
 		vault.setLock(true);
 		
-		// Gate Items
+		// Gate Items / NPC
+		NPC gateguard = new GateGuard("Guard", "A Royal Guard Guarding the Main Gate, Talk to him once you're Ready to Slay the Dragon and Save the Princess");
 		Item tiara = new Item("Tiara", "The Tiara of Princess Maria, I Must Return it!");
 		Item dull = new Item("DullSword", "An extremly Dull Sword, Totally NOT the Dragon Slaying Kind, Could be Fixed Up.");
 		Item half = new Item("BurnedArmor", "Charred and Burned Unusable Knight Armor, NOT the Dragon Slyaing Kind, But Could be Fixed.");
 		
+		gate.addNPC(gateguard.getName(), gateguard);
 		gate.addItem(tiara.getName(), tiara);
 		gate.addItem(dull.getName(), dull);
 		gate.addItem(half.getName(), half);
@@ -62,8 +64,10 @@ public class World {
 		
 		tavern.addItem(jack.getName(), jack);
 		// Knights Quarters Items
-		Item armor = new Item("RoyalArmor", "A Reliable, Sturdy, and Shiny Golden Armor Made for the Royal Knights");
+		NPC guardguard = new GuardGuard("Guard", "A Royal Guard protcting the Royal Knights Quarters or simply the Guard House.");
+		Item armor = new Item("RoyalArmor", "A Reliable, Sturdy, and Shiny Red and Gold Armor Made for the Royal Knights");
 		
+		knight.addNPC(guardguard.getName(), guardguard);
 		knight.addItem(armor.getName(), armor);
 		// Dungeon Items
 		Key vaultKey = new Key("VaultKey", "A Key to The Royal Vault!");
@@ -72,6 +76,9 @@ public class World {
 		// Dragon Lair Items
 		// Agartha Items
 		// Market Items
+		
+		// No Items so far
+		
 		// Blacksmith Items
 		// Archery Range Items
 		// Wizard Sanctum Items

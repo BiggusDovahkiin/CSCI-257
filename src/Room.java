@@ -3,6 +3,7 @@ import java.util.HashMap;
 public class Room {
 
 	private HashMap<String, Item> items = new HashMap<String, Item>();
+	private HashMap<String, NPC> npcs = new HashMap<>();
 	private String name;
 	private String description;
 	private Room n;
@@ -84,6 +85,14 @@ public class Room {
 	
 	public void removeItem(String itemName) {
 		items.remove(itemName);
+	}
+	
+	public NPC getNPC(String npcName) {
+		return npcs.get(npcName);
+	}
+	
+	public void addNPC(String npcName, NPC person) {
+		npcs.put(npcName, person);
 	}
 	
 	public boolean isLock() {

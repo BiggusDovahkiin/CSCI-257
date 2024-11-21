@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+//import java.util.HashMap;
 
 public class Game {
 	public static void main(String[] args) {
@@ -8,7 +9,8 @@ public class Game {
 
 	public static ArrayList<Item> inventory = new ArrayList<Item>();
 	public static Room currentRoom = World.buildWorld();
-	
+	//public static HashMap<String name, DESCRIPTION> roomText = new HashMap<>();
+	public static Scanner input = new Scanner(System.in);
 	
 	public static void print(Object obj) {
 		System.out.println(obj.toString());
@@ -27,7 +29,6 @@ public class Game {
 	}
 
 	public static void runGame() {
-		Scanner input = new Scanner(System.in);
 
 		String command; // player's command
 		do {
@@ -55,11 +56,11 @@ public class Game {
 
 			// Take Command
 			case "take":
-				Item thing1 = currentRoom.getItem(parts[1]);
-				if (thing1 != null) {
-					inventory.add(thing1);
+				Item thing = currentRoom.getItem(parts[1]);
+				if (thing != null) {
+					inventory.add(thing);
 					currentRoom.removeItem(parts[1]);
-					System.out.println("You Got a " + thing1.getName() + "!");
+					System.out.println("You Got a " + thing.getName() + "!");
 				} else {
 					System.out.println("There is Nothing to Take Here.");
 				}
@@ -67,9 +68,9 @@ public class Game {
 
 			// Look Command
 			case "look":
-				Item thing2 = currentRoom.getItem(parts[1]);
-				if (thing2 != null) {
-					System.out.println(thing2.getDescription());
+				Item things = currentRoom.getItem(parts[1]);
+				if (things != null) {
+					System.out.println(things.getDescription());
 				} else {
 					for (Item itemName : inventory) {
 						if (itemName.getName().equals(parts[1])) {
@@ -106,6 +107,14 @@ public class Game {
 					for (Item invItem : inventory) {
 						System.out.println("- " + invItem.getName());
 					}
+				}
+				break;
+				
+			// Talk Command
+			case "talk":
+				NPC person = currentRoom.getNPC(parts[1]);
+				if (person != null) {
+					person.talk();
 				}
 				break;
 			case "x":
