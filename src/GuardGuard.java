@@ -43,26 +43,26 @@ public class GuardGuard extends NPC{
 	@Override
 	public void response(int option) {
 		if (convo == 1) {
-		switch (option) {
-		case 1:
-			say("Oh it is only the single most challenging endever a Knight could ever hope to accomplish. You Must First gain the trust of the King himself, then take on a Personal Favor of Her Majesty the Queen. Then and ONLY THEN, wll you be tasked on a mission SO DANGEROUS, that only 1 Knight hasever done it and lived... That man is non other than THE KING HIMSELF... I would wish you luck, but theres no way you could ever hope to complete such a task when not even myself has gained the kings trust. Begone with you now.");
-			Game.print("The Guard turns his head to give you the hand to talk to. Clearly this guys helmets on little tight. Guess you could try talking to the king, worth a shot anyway.");
-			convo = 2;
-			break;
-		case 2:
-			say("I- uhhhhhhhh... HARKS! Fine fine, you got me, please dont go to his Majesty about this. Ive aleady been in trouble a few times and I really need this job man. ");
-			say("Look Ill let you in BUT, only after you do something for me. I need you to get me someting to take the edge off yk? ");
-			say("I hear the Tavern got a new sipment of stuff from this odd place called Tennessee or whatever that wasteland is called. ");
-			say("Bring me that and Ill THINK about letting you in.");
-			Game.print("The Guard seems to be, well, off his guard. Im sure the Bartender at the Tavern can help you out");
-			convo = 3;
-			break;
-		case 3:
-			say("IM SO SORRY SIR! THATS MY MISTAKE IM SO SORRY, PLEASE FORGIVE ME ILL DO ANYTHING, ANYTHING I SWEAR PLEASE DONT KILL ME!");
-			Game.print("So yeah this dude lost it. Literally balling his eyes out in a fetal position begging for mercy... thats a yikes from me man. On the brightside tho hes no longer guarding the Guard House.");
-			convo = 4;
-			break;
-		}
+			switch (option) {
+			case 1:
+				say("Oh it is only the single most challenging endever a Knight could ever hope to accomplish. You Must First gain the trust of the King himself, then take on a Personal Favor of Her Majesty the Queen. Then and ONLY THEN, wll you be tasked on a mission SO DANGEROUS, that only 1 Knight hasever done it and lived... That man is non other than THE KING HIMSELF... I would wish you luck, but theres no way you could ever hope to complete such a task when not even myself has gained the kings trust. Begone with you now.");
+				Game.print("The Guard turns his head to give you the hand to talk to. Clearly this guys helmets on little tight. Guess you could try talking to the king, worth a shot anyway.");
+				convo = 2;
+				break;
+			case 2:
+				say("I- uhhhhhhhh... HARKS! Fine fine, you got me, please dont go to his Majesty about this. Ive aleady been in trouble a few times and I really need this job man. ");
+				say("Look Ill let you in BUT, only after you do something for me. I need you to get me someting to take the edge off yk? ");
+				say("I hear the Tavern got a new sipment of stuff from this odd place called Tennessee or whatever that wasteland is called. ");
+				say("Bring me that and Ill THINK about letting you in.");
+				Game.print("The Guard seems to be, well, off his guard. Im sure the Bartender at the Tavern can help you out");
+				convo = 3;
+				break;
+			case 3:
+				say("IM SO SORRY SIR! THATS MY MISTAKE IM SO SORRY, PLEASE FORGIVE ME ILL DO ANYTHING, ANYTHING I SWEAR PLEASE DONT KILL ME!");
+				Game.print("So yeah this dude lost it. Literally balling his eyes out in a fetal position begging for mercy... thats a yikes from me man. On the brightside tho hes no longer guarding the Guard House.");
+				convo = 4;
+				break;
+			}
 		}
 		
 		else if (convo == 2) {
