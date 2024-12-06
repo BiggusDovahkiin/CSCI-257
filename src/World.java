@@ -1,18 +1,18 @@
 
 public class World {
 	public static Room buildWorld() {
-		Room dragon = new Room("DragonsLair", "This is the Lair of the Great Dragon, GoodLuck!");
-		Room gate = new Room("MainGate", "The Main gate of The Castle. A Dull Sword and Burned Armor Lay at Your Feet! You also Find a Tiara. The Guard Guarding the Gate is at Attention and hasn't moved since the Ice Age");
-		Room tavern = new Room("Tavern", "This is the Castle Tavern, Information and Drinks Await!");
-		Room market = new Room("Market", "This is the Castle Market where you can Buy and Sell Goods!");
-		Room blacksmith = new Room("BlackSmith", "This is the Castle Blacksmith, where Powerful Weapons are Made... Maybe even the Dragon Slaying kind?");
-		Room range = new Room("ArcheryRange", "This is where the Royal Archers are Trained and Supplied with Special Bows and Arrows! Maybe even the Dragon Slaying kind?");
-		Room sanctum = new Room("WizardSanctum", "This is where the Old Wizard lives. Some Weird stuff in here and lots of Magical Items... Maybe even the Dragon Slaying kind?");
-		Room throne = new Room("ThroneRoom", "The Throne Room of the Mighty King Barlgruuf the Greater and Queen Maven Black-Briar. Princess Maria's Throne sits empty");
-		Room knight = new Room("GuardHouse", "This is where the Castle Knights live, the Castle Dungeon is below.");
-		Room dungeon = new Room("Dungeon", "The Dungeon, where the Scum Manage to stay Alive after Betraying our Great Kingdom");
-		Room vault = new Room("RoyalVault", "The Royal Vault. Where the Royal Family keeps everything Royal... well Royal! Sure to be some Royaly Royal things of Royalty in here.");
-		Room agartha = new Room("Agartha", "Welcome to Agartha. The Home of Dr. Monty, the True King and a God in his own right.");
+		Room dragon = new Room("DragonsLair");
+		Room gate = new Room("MainGate");
+		Room tavern = new Room("Tavern");
+		Room market = new Room("Market");
+		Room blacksmith = new Room("BlackSmith");
+		Room range = new Room("ArcheryRange");
+		Room sanctum = new Room("WizardSanctum");
+		Room throne = new Room("ThroneRoom");
+		Room knight = new Room("GuardHouse");
+		Room dungeon = new Room("Dungeon");
+		Room vault = new Room("RoyalVault");
+		Room agartha = new Room("Agartha");
 		
 		gate.addExit('e', tavern);
 		gate.addExit('s', dragon);
@@ -70,8 +70,10 @@ public class World {
 		knight.addNPC(guardguard.getName(), guardguard);
 		knight.addItem(armor.getName(), armor);
 		// Dungeon Items
+		NPC dungeonguard = new DungeonGuard("Guard", "A Royal Guard posted up before the Dungeon.");
 		Key vaultKey = new Key("VaultKey", "A Key to The Royal Vault!");
 		
+		dungeon.addNPC(dungeonguard.getName(), dungeonguard);
 		dungeon.addItem(vaultKey.getName(), vaultKey);
 		// Dragon Lair Items
 		// Agartha Items

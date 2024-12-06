@@ -5,7 +5,6 @@ public class Room {
 	private HashMap<String, Item> items = new HashMap<String, Item>();
 	private HashMap<String, NPC> npcs = new HashMap<>();
 	private String name;
-	private String description;
 	private Room n;
 	private Room e;
 	private Room s;
@@ -15,9 +14,8 @@ public class Room {
 	private boolean lock;
 
 	// constructor
-	public Room(String n, String desc) {
+	public Room(String n) {
 		name = n;
-		description = desc;
 	}
 
 	// get methods
@@ -67,6 +65,10 @@ public class Room {
 		}
 	}
 	
+	public String getDesc() {
+		return Game.rooms.get(name);
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -105,7 +107,7 @@ public class Room {
 
 	// special methods
 	public String toString() {
-		return description;
+		return getDesc();
 	}
 	
 }

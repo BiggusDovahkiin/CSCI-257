@@ -1,15 +1,18 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
-//import java.util.HashMap;
+import java.util.HashMap;
 
 public class Game {
 	public static void main(String[] args) {
+		readRoomDesc();
 		print (currentRoom);
 	}
 
 	public static ArrayList<Item> inventory = new ArrayList<Item>();
 	public static Room currentRoom = World.buildWorld();
-	//public static HashMap<String name, DESCRIPTION> roomText = new HashMap<>();
+	public static HashMap<String, String> rooms = new HashMap<>();
 	public static Scanner input = new Scanner(System.in);
 	public static GameGUI gui = new GameGUI();
 	
@@ -23,6 +26,32 @@ public class Game {
 			}
 		}
 		return null;
+	}
+	
+	public static void readRoomDesc() {
+		try {
+			File RoomsFile = new File("Rooms.txt");
+			Scanner input = new Scanner(RoomsFile);
+			ArrayList<String> stringRoomFile = new ArrayList<String>();
+			
+			while(input.hasNextLine()) {
+				if(input.hasNext("#") != true) {
+					String line = input.nextLine();
+					stringRoomFile.add(line);
+				}
+				else {
+					input.nextLine();
+				}
+			}
+			for (int s = 0; s < stringRoomFile.size(); s += 2) {
+				String roomName = stringRoomFile.get(s);
+				String roomDesc = stringRoomFile.get(s+1);
+				rooms.put(roomName, roomDesc);
+			}
+			input.close();
+		} catch (FileNotFoundException e) {
+			Game.print("File not Found!");
+		}
 	}
 	
 	public static void print(Object text) {
@@ -114,6 +143,8 @@ public class Game {
 				person.talk();
 			}
 			break;
+			
+		// End
 		case "x":
 			print("Congrats you Win!...or did you?");
 			break;
