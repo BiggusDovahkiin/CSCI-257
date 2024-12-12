@@ -1,0 +1,35 @@
+DragonsLair
+You now Face The Dragon in his own Lair. With the Main Gate Now Closed. Good Luck!
+#
+MainGate
+You See the Masterfully Built "Der Eisendrache" Family Castle far North. To the West There is the Royal Knight Quarters. To the immediate North is the Town Market, there's got to be some good stuff there. To the East is the Tavern, Surely Dave is Bar-tending at this hour. The Guard at the Gate with you is the only way out of the Castle. Speak to him when you are ready.
+#
+Tavern
+Ah the good old Dirty Barrels Tavern. Lively as always with tons of Townsfolk who either have no idea their Dear Princess is Missing... or are so deep in their Mead, That Option 1 isn't even an Option. You take a Seat at an Empty Bar Stool and see Dave the Bartender, Talking to Dave would be a good idea. 
+#
+GuardHouse
+You now stand in the Guard House, You see a Large Royal Knight Locker and also a Ladder leading down into the Dungeon. The Ladder is Blocked by Another Guard. Surely he can "Persuaded" to Give you Access.
+#
+Dungeon
+Climbing the Ladder Down, you are now in the Castle Dungeon. It Smells, Stinks, and Reeks at the same time. All very distinct and different tho, odd. You come Face to Face with "Ripper the Jack". #1 Most Wanted in all of Tamriel. Wanted for Murdering the High-King with his Thu'um... wait Wrong Game... Ahem... Ripper the Jack breed 8,000 Peacocks and was arrested, Tortured, and Thrown in here after his 8,000 Peacocks woke up the Current King form his 4pm-7pm Nap-time. Very Dangerous Man this man is.
+#
+Market
+Moving into the Town Market Area hits you with 13 different Mariacci Bands all playing Suavemente at different times, Mother Mae-Eyes Pie Stall is making 37 pies per minute, and people are absolutely blasted, passed-out on the dirt floor. To your West you see a sign for "Royal Archers Range". Loosing some Raw Power to keep good distance may prove useful. Another sign reads "CoolMathJack's BlackSmith East!". If anyone would know how to effectively Slay a Dragon,  its gonna be this dude, Trust Me. One more sign reads "Take Stairs Up to Snape's Sanctum Sanctorum". The Wonderful Wizard of Snape lives up there, I Personally would Avoid that guy. To your North, you see the full Beauty of Der Eisendrache Castle. The King of This Great Land rules from his Throne made from Pure Dark Matter... don't ask.
+#
+Range
+You walk into the Royal Archer Range and hear the impact sounds of Archers hitting their Marks. You see the Grand Royal Shot, Mark the Marksman, (The Highest Rank an archer could ever hope to become. Comes with some amazing job perks, like 15 paid vacation days... THAT THEY STACK INTO THE FOLLOWING YEAR). Mark is teaching the Newest Recruits the basics.
+#
+Blacksmith
+You enter CoolMathJack's Blacksmith and get hit with a strong wave of heat from the forges. CoolMathJack looks to be hammering away at some hot metal.
+#
+WizardSanctum
+You enter Snapes Sanctum Sanctorum and something feels "off". You see the Wizard Snape in his BLack Robes strutting in circles muttering something you cant quite hear.
+#
+ThroneRoom
+You Enter the Great Hall of the Der Eisendrache Castle. Before you are 3 Thrones. The Rightmost Throne belongs to the missing Princess Maria. Her Throne resembles the Call of Duty, Black Ops 2 Multiplayer Diamond Mastery Camo. Stunning... The Leftmost Throne sits the Queen of the Land, Our very own Queen Maven Black-Briar. Her Throne seems to be made of Pre-2017 Minecraft Diamond Block Texture. Exquisite. And of course, our King Barlgruuf the Greater Himself, the center Throne is made of Purely Dark Matter. Interesting.
+#
+RoyalVault_P
+You Now Stand in the Royal Family Vault. You do see the 3 Family Pedestals Her Highness spoke of. The King Pedestal, which holds the very weapon the King Himself used to save our now Queen from the Dragon that kidnaped her all those years ago. He called it... "Stormbreaker". its kept under a harsh red light, on fire, and surrounded by lava and arcs of lightning. The Queen Pedestal, holds the "Super-Shotgun", its Gilded in Solid Gold and Bright White Marble. It has a heavenly light on it surrounded with beautiful flora and luscious greenery. The Princess Pedestal, holds Fair Maria's Tiara. This Tiara has been paced down from all 37 past kidnaped Princess'. Remember tho, Only 1 Family Token can be taken. Choose wisely.
+#
+Agartha
+As you land on your feet, you look out to see everything. All of space and time wrapped in a single space. You're not even sure you actually know what you're looking at, but this is it. The Aether, the Infinite, Agartha. You see him. The Shadow Man. Princess Maria is locked in a cell next to him.

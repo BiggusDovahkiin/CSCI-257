@@ -20,7 +20,16 @@ public class GameGUI extends JFrame implements ActionListener {
 	}
 	
 	public void setAppendText(String text) {
-		textArea.setText(text);
+		textArea.append(text + "\n");
+	}
+	
+	public void updateRoomDisplay() {
+		textArea.append(Game.currentRoom.getDesc() + "\n");
+	}
+	
+	public void stopAcceptingInput() {
+		textField.setEnabled(false);
+		button.setEnabled(false);
 	}
 
 	private void buildWindow() {
@@ -33,6 +42,11 @@ public class GameGUI extends JFrame implements ActionListener {
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
 		add(textArea, BorderLayout.CENTER);
+		
+		JScrollPane scrollPane = new JScrollPane(textArea);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setPreferredSize(new Dimension(480, 400));
+        add(scrollPane, BorderLayout.CENTER);
 		
 		//South Area
 		JPanel panel = new JPanel();
@@ -48,8 +62,8 @@ public class GameGUI extends JFrame implements ActionListener {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(500, 500);
-		setLocationRelativeTo(null); // Center window
-		setVisible(true); // Make window appear
+		setLocationRelativeTo(null);
+		setVisible(true);
 	}
 
 }

@@ -17,6 +17,10 @@ public class NPC {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
+	
+	public String getDesc() {
+		return desc;
+	}
 
 	public void say(String dialog) {
 		Game.print(name + ": " + dialog);

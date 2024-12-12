@@ -2,9 +2,11 @@
 public class GateGuard extends NPC {
 
 	private int convo = 1;
+	private Room dragonsLair;
 
-	public GateGuard(String name, String desc) {
+	public GateGuard(String name, String desc, Room dragonsLair) {
 		super(name, desc);
+		this.dragonsLair = dragonsLair;
 	}
 
 	@Override
@@ -29,6 +31,8 @@ public class GateGuard extends NPC {
 		case 1:
 			say("Most Joyest of News Sir, I will Open the Gate and wish you Good Luck and Hope for you and Lady Maria's safe return.");
 			Game.print("The Guard bows before you and you do the same before heading off into the Dragons Lair.");
+			Game.currentRoom = dragonsLair;
+			Game.gui.updateRoomDisplay();
 			break;
 		case 2:
 			say("A Wise man Indeed. I shall be here Awaiting your word to Begin the Battle. Make Haste for we do not have the Luxury of Time.");

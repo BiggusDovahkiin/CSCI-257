@@ -7,14 +7,15 @@ import java.util.HashMap;
 public class Game {
 	public static void main(String[] args) {
 		readRoomDesc();
-		print (currentRoom);
+		print(currentRoom);
+		print("I should ask the bartender for some info!");
 	}
 
 	public static ArrayList<Item> inventory = new ArrayList<Item>();
 	public static Room currentRoom = World.buildWorld();
 	public static HashMap<String, String> rooms = new HashMap<>();
-	public static Scanner input = new Scanner(System.in);
 	public static GameGUI gui = new GameGUI();
+	public static boolean SpokenToKingAndQueen = false;
 	
 	public Item useItem(String nameOfItem) {
 		for (Item itemName : inventory) {
@@ -73,7 +74,15 @@ public class Game {
 			if (nextRoom == null) {
 				print("You Cannot Go That Way.");
 			} else if (nextRoom.isLock()) {
-				print("This Way is Locked! Find a way to Unlock it!");
+				if (nextRoom.getName().equals("DragonsLair")) {
+					print("You must speak to the Gate Guard in order to leave the Castle.");
+				}
+				else if (nextRoom.getName().equals("Dungeon")) {
+					print("There is a Guard there, you must get him to allow you access to the Dungeon.");
+				}
+				else if (nextRoom.getName().equals("RoyalVault")) {
+					print("The Vault is locked-up tight, you need a key to get in there.");
+				}
 			} else {
 				currentRoom = nextRoom;
 				print (currentRoom);
@@ -94,6 +103,12 @@ public class Game {
 
 		// Look Command
 		case "look":
+			NPC persons = currentRoom.getNPC(parts[1]);
+			if (persons != null) {
+				print(persons.getDesc());
+			} else {
+				print("There is No Such Person");
+			}
 			Item things = currentRoom.getItem(parts[1]);
 			if (things != null) {
 				print(things.getDescription());
@@ -151,106 +166,5 @@ public class Game {
 		default:
 			print("I Dont Understand That");
 		}
-	}
-
-	public static void runGame() {
-
-		String command; // player's command
-		do {
-			print(currentRoom);
-			System.out.print("Where do you want to go? ");
-			command = input.nextLine();
-			String[] parts = command.split(" ");
-
-			switch (parts[0]) {
-			case "e":
-			case "w":
-			case "n":
-			case "s":
-			case "u":
-			case "d":
-				Room nextRoom = currentRoom.getExit(command.charAt(0));
-				if (nextRoom == null) {
-					print("You Cannot Go That Way.");
-				} else if (nextRoom.isLock()) {
-					print("This Way is Locked! Find a way to Unlock it!");
-				} else {
-					currentRoom = nextRoom;
-				}
-				break;
-
-			// Take Command
-			case "take":
-				Item thing = currentRoom.getItem(parts[1]);
-				if (thing != null) {
-					inventory.add(thing);
-					currentRoom.removeItem(parts[1]);
-					print("You Got a " + thing.getName() + "!");
-				} else {
-					print("There is Nothing to Take Here.");
-				}
-				break;
-
-			// Look Command
-			case "look":
-				Item things = currentRoom.getItem(parts[1]);
-				if (things != null) {
-					print(things.getDescription());
-				} else {
-					for (Item itemName : inventory) {
-						if (itemName.getName().equals(parts[1])) {
-							print(itemName.getDescription());
-						} else {
-							print("There is No Such Item");
-						}
-					}
-				}
-				break;
-				
-			// Use Command
-			case "use":
-				for (Item itemName : inventory) {
-					if (itemName.getName().equals(parts[1])) {
-						itemName.use();
-					} 
-				}
-				break;
-				
-			// Open Command
-			case "open":
-				Item thing3 = currentRoom.getItem(parts[1]);
-				if (thing3 != null) {
-					thing3.open();
-				}
-
-			// Inventory Command
-			case "i":
-				if (inventory.isEmpty()) {
-					print("You Are Carrying Nothing");
-				} else {
-					print("What You Are Carrying: ");
-					for (Item invItem : inventory) {
-						print("- " + invItem.getName());
-					}
-				}
-				break;
-				
-			// Talk Command
-			case "talk":
-				NPC person = currentRoom.getNPC(parts[1]);
-				if (person != null) {
-					person.talk();
-				}
-				break;
-			case "x":
-				print("Congrats you Win!...or did you?");
-				break;
-			default:
-				print("I Dont Understand That");
-			}
-
-		} while (!command.equals("x"));
-
-		input.close();
 	}
 }
